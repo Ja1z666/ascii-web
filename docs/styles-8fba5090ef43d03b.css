@@ -57,6 +57,7 @@ body {
 
 .settings input[type="file"] {
   border: 1px solid #ffffff;
+  border-radius: 0px;
   color: transparent;
   width: 130px;
   cursor: pointer;
@@ -81,6 +82,7 @@ body {
   appearance: none;
   background: transparent;
   border: 1px solid #ffffff;
+  border-radius: 0px;
   height: 6px;
   max-width: 200px;
 }
@@ -98,6 +100,7 @@ body {
   font-family: 'Space Mono', monospace;
   background: transparent;
   border: 1px solid #ffffff;
+  border-radius: 0px;
   max-width: 140px;
   font-size: 14px;
   padding: 12px 10px;
@@ -112,6 +115,7 @@ body {
   font-family: 'Space Mono', monospace;
   background-color: transparent;
   border: 1px solid #ffffff;
+  border-radius: 0px;
   color: #ffffff;
   width: 130px;
   padding: 12px 0px;
@@ -125,6 +129,7 @@ textarea {
   width: 60%;
   background-color: transparent;
   border: 1px solid #ffffff;
+  border-radius: 0px;
   color: #ffffff;
   font-size: 14px;
   padding: 20px 30px;

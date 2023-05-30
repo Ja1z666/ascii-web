@@ -52,7 +52,6 @@ impl Parameters {
 
     fn get_ascii(intent: u8, ascii_symb: Vec<&str>) -> &str {
         let i = (256 / ascii_symb.len()) as u8;
-        log!(i);
         let mut index = intent / i;
         if index > ascii_symb.len() as u8 - 1 {
             index -= 1;
@@ -152,7 +151,18 @@ fn App() -> Html {
                 .unchecked_into::<HtmlInputElement>()
                 .set_value("Please choose picture...");
         } else {
-            parameters.load_ascii();
+            if parameters.ascii_symb.len() == 0 {
+                return window()
+                    .unwrap()
+                    .document()
+                    .unwrap()
+                    .get_element_by_id("text")
+                    .unwrap()
+                    .unchecked_into::<HtmlInputElement>()
+                    .set_value("Please input symbols...");
+            } else {
+                parameters.load_ascii();
+            }
         }
     });
 
@@ -171,7 +181,7 @@ fn App() -> Html {
                         }
                     </div>
                     <input onchange={onchange_scale} type="range" min="1" max="64" id="scale" />
-                    <input onchange={onchange_text} type="text" value={cloned_parameters_usage.ascii_symb.clone()} />
+                    <input onchange={onchange_text} type="text" maxlength="27" value={cloned_parameters_usage.ascii_symb.clone()} />
                 </div>
                 <input onclick={submit} class="submit" type="button" value="Submit" />
             </div>
