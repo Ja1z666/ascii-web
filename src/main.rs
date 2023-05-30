@@ -21,6 +21,7 @@ impl Parameters {
         let (width, height) = image.dimensions();
         let mut result = String::new();
         let mut ascii = self.ascii_symb.split("").collect::<Vec<&str>>();
+        ascii[0] = " ";
         ascii.pop();
 
         for y in 0..height {
