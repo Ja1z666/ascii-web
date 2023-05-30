@@ -4,36 +4,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles-32ebe81fbe51188f.css">
+    <link rel="stylesheet" href="/ascii-web/styles-32ebe81fbe51188f.css">
+    <base href="/ascii-web/">
 
-<link rel="preload" href="/ascii_web-6e695be730dc0b85_bg.wasm" as="fetch" type="application/wasm" crossorigin="">
-<link rel="modulepreload" href="/ascii_web-6e695be730dc0b85.js"></head>
+<link rel="preload" href="/ascii-web/ascii_web-5b05445ec3abd0ec_bg.wasm" as="fetch" type="application/wasm" crossorigin="">
+<link rel="modulepreload" href="/ascii-web/ascii_web-5b05445ec3abd0ec.js"></head>
 
-<body><script type="module">import init from '/ascii_web-6e695be730dc0b85.js';init('/ascii_web-6e695be730dc0b85_bg.wasm');</script><script>(function () {
-    var protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-    var url = protocol + '//' + window.location.host + '/_trunk/ws';
-    var poll_interval = 5000;
-    var reload_upon_connect = () => {
-        window.setTimeout(
-            () => {
-                // when we successfully reconnect, we'll force a
-                // reload (since we presumably lost connection to
-                // trunk due to it being killed, so it will have
-                // rebuilt on restart)
-                var ws = new WebSocket(url);
-                ws.onopen = () => window.location.reload();
-                ws.onclose = reload_upon_connect;
-            },
-            poll_interval);
-    };
-
-    var ws = new WebSocket(url);
-    ws.onmessage = (ev) => {
-        const msg = JSON.parse(ev.data);
-        if (msg.reload) {
-            window.location.reload();
-        }
-    };
-    ws.onclose = reload_upon_connect;
-})()
-</script></body></html>
+<body><script type="module">import init from '/ascii-web/ascii_web-5b05445ec3abd0ec.js';init('/ascii-web/ascii_web-5b05445ec3abd0ec_bg.wasm');</script></body></html>
